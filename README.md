@@ -20,11 +20,15 @@ The first thing I did was restructured the way the data was organized. I merged 
 
 With the training set, I split off 20% of the reviews into a validation set. With the reduced training set and the new validation set, I trained spacy's TextCategorizer model for 80 epochs. Using the scores produced by the trained categorizer for the training set, I trained an SVM classifier. Using the trained word2vec model and the trained classifier, I calculated the area under the ROC curves for the predictions for the validation sets and testing sets. Something to note here is that since the TextCategorizer produces a single score for each review (the vector is of length 1), we can also plot the ROC curves using the scores before they have passed through the SVM classifier -- this smooths out the curve.
 
-[Image for ROC curve for validation data cats]
-[Image for ROC curve for validation data scores]
+![Image for ROC curve for validation data cats](https://github.com/ajonnav/imdb-review-classifier/blob/master/images/val_cat_roc.png)
+*ROC Curve for validation data set using the categories*
+![Image for ROC curve for validation data scores](https://github.com/ajonnav/imdb-review-classifier/blob/master/images/val_scores_roc.png)
+*ROC Curve for validation data set using scores*
 
-[Image for ROC curve for testing data cats]
-[Image for ROC curve for testing data scores]
+![Image for ROC curve for testing data cats](https://github.com/ajonnav/imdb-review-classifier/blob/master/images/test_cat_roc.png)
+*ROC Curve for testing data set using the categories*
+![Image for ROC curve for testing data scores](https://github.com/ajonnav/imdb-review-classifier/blob/master/images/test_scores_roc.png)
+*ROC Curve for testing data set using scores*
 
 I then generated the predictions for the unlabeled reviews.
 
@@ -56,7 +60,7 @@ This file is the main entrypoint for the project. It assumes that you are trying
 
 | flag | train | predict |
 | ---------------- | ----------------------------------------- | ------------------------------------------ |
-| --data-path | Path to the training data directory; there needs to be a `text.txt` file and a `labels.txt` file | Path to the prediction data directory; there needs to be at least a `text.txt` file |
+| `--data-path` | Path to the training data directory; there needs to be a `text.txt` file and a `labels.txt` file | Path to the prediction data directory; there needs to be at least a `text.txt` file |
 | `--model-path` | Path to model folder; only if you want to further train an existing model | Path to model to use for predictions |
 | `--model-type` | Type of model, currently only `spacy` (which is the default value)| Type of model, currently only `spacy` (which is the default value) |
 | `--limit` | Limits the number of samples to train on | Limits the number of samples to generate predictions for |
