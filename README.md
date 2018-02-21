@@ -22,11 +22,13 @@ With the training set, I split off 20% of the reviews into a validation set. Wit
 
 ![Image for ROC curve for validation data cats](https://github.com/ajonnav/imdb-review-classifier/blob/master/images/val_cat_roc.png)
 *ROC Curve for validation data set using the categories*
+
 ![Image for ROC curve for validation data scores](https://github.com/ajonnav/imdb-review-classifier/blob/master/images/val_scores_roc.png)
 *ROC Curve for validation data set using scores*
 
 ![Image for ROC curve for testing data cats](https://github.com/ajonnav/imdb-review-classifier/blob/master/images/test_cat_roc.png)
 *ROC Curve for testing data set using the categories*
+
 ![Image for ROC curve for testing data scores](https://github.com/ajonnav/imdb-review-classifier/blob/master/images/test_scores_roc.png)
 *ROC Curve for testing data set using scores*
 
