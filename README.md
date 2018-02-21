@@ -44,6 +44,8 @@ The number 10,000 was chosen for the number of training samples because I though
 ## Results
 I've put the trained spacy model, the trained SVM classifier and the predictions for the unsupervised reviews in the `results` folder. The easiest way to load and use the model/classifier is to use the `load_model` and `load_classifier` methods in `main.py`.
 
+The final area under the ROC curve for my testing data set was 0.78196 (going by the predicted labels).
+
 ## Structure of code
 
 ### word2vec.py
