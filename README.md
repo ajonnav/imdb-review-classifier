@@ -20,17 +20,22 @@ The first thing I did was restructured the way the data was organized. I merged 
 
 With the training set, I split off 20% of the reviews into a validation set. With the reduced training set and the new validation set, I trained spacy's TextCategorizer model for 80 epochs. Using the scores produced by the trained categorizer for the training set, I trained an SVM classifier. Using the trained word2vec model and the trained classifier, I calculated the area under the ROC curves for the predictions for the validation sets and testing sets. Something to note here is that since the TextCategorizer produces a single score for each review (the vector is of length 1), we can also plot the ROC curves using the scores before they have passed through the SVM classifier -- this smooths out the curve.
 
-![Image for ROC curve for validation data cats](https://github.com/ajonnav/imdb-review-classifier/blob/master/images/val_cat_roc.png)
 *ROC Curve for validation data set using the categories*
 
-![Image for ROC curve for validation data scores](https://github.com/ajonnav/imdb-review-classifier/blob/master/images/val_scores_roc.png)
+![Image for ROC curve for validation data cats](https://github.com/ajonnav/imdb-review-classifier/blob/master/images/val_cat_roc.png)
+
 *ROC Curve for validation data set using scores*
 
-![Image for ROC curve for testing data cats](https://github.com/ajonnav/imdb-review-classifier/blob/master/images/test_cat_roc.png)
+![Image for ROC curve for validation data scores](https://github.com/ajonnav/imdb-review-classifier/blob/master/images/val_score_roc.png)
+
 *ROC Curve for testing data set using the categories*
 
-![Image for ROC curve for testing data scores](https://github.com/ajonnav/imdb-review-classifier/blob/master/images/test_scores_roc.png)
+![Image for ROC curve for testing data cats](https://github.com/ajonnav/imdb-review-classifier/blob/master/images/test_cat_roc.png)
+
 *ROC Curve for testing data set using scores*
+
+![Image for ROC curve for testing data scores](https://github.com/ajonnav/imdb-review-classifier/blob/master/images/test_score_roc.png)
+
 
 I then generated the predictions for the unlabeled reviews.
 
