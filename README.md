@@ -53,7 +53,8 @@ To actually hold the data once it is loaded, I created a `Dataset` class. In add
 ### main.py
 
 This file is the main entrypoint for the project. It assumes that you are trying to do one of two things -- train a model or predict using an old model. In addition to the train and predict methods, the file also contains a bunch of helper methods such as `load_model`, `load_data` and `load_classifier`. There are a number of flags that you can set in order to control what you want `main.py` to do. The main flag is the `--mode` flag which can be set to either `train` or `predict`. Based on what the mode is set to, the rest of the flags set different parameters:
-| flag  | train | predict |
+| flag | train | predict |
+| ----------------------------------------- | ----------------------------------------- | ------------------------------------------ |
 | `--data-path` | Path to the training data directory; there needs to be a `text.txt` file and a `labels.txt` file | Path to the prediction data directory; there needs to be at least a `text.txt` file
 | `--model-path` | Path to model folder; only if you want to further train an existing model | Path to model to use for predictions |
 | `--model-type` | Type of model, currently only `spacy` (which is the default value)| Type of model, currently only `spacy` (which is the default value) |
